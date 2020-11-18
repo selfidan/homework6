@@ -9,7 +9,7 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
-	let vol = document.querySelector("#volume").innerHTML = video.volume + 99 + "%" 
+	//let vol = document.querySelector("#volume").innerHTML = video.volume + 99 + "%" 
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -29,6 +29,20 @@ document.querySelector("#faster").addEventListener("click", function() {
 	video.playbackRate /= .9;
 
 });
+
+document.querySelector("#skip").addEventListener("click", function() {
+	if (video.currentTime < video.duration -5){
+		video.currentTime += 5
+		console.log("Skip ahead 5 sec" + video.currentTime)
+
+	} else {
+		video.currentTime = 0
+		console.log("Going Back to Beginning of Video")
+	}
+	video.play();
+	
+});
+
 
 document.querySelector("#mute").addEventListener("click", function() {
 	console.log("Mute Video");
