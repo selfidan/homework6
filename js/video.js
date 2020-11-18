@@ -51,7 +51,7 @@ document.querySelector("#mute").addEventListener("click", function() {
 		//mute.innerHTML = "Muted"
 	} else { 
 		video.muted = true;
-		//mute.innerHTML = "Unmuted"
+		mute.innerHTML = "Unmuted"
 		
 	}	
 });
