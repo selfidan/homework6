@@ -46,15 +46,17 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 document.querySelector("#mute").addEventListener("click", function() {
 	console.log("Mute Video");
-	if (video.muted === false) {
-		video.muted = true; 
+	if (video.muted) {
+		video.muted = false; 
+		mute.innerHTML = "Muted"
 	} else { 
-		video.muted = false;
+		video.muted = true;
+		mute.innerHTML = "Unmuted"
 		
 	}	
 });
 
-document.querySelector("#volumeSlider").addEventListener("click", function() {
+document.querySelector("#volumeSlider").addEventListener("change", function() {
 	console.log(this);
 	console.log(this.value);
 	video.volume = this.value / 100;
@@ -64,15 +66,11 @@ document.querySelector("#volumeSlider").addEventListener("click", function() {
 });
 
 document.querySelector("#old").addEventListener("click", function(){
-	console.log("Old School Video");
-	video.style.filter = "grayscale(100)";
-	video.style.filter;
+	video.classList.add("oldTime")
 });
 
 document.querySelector("#original").addEventListener("click", function(){
-	console.log("Original Video");
-	video.style.filter = "grayscale(0)";
-	video.style.filter;
+	video.classList.remove("oldTime")
 });
 
 
